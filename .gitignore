@@ -1,5 +1,5 @@
 # Project exclude paths
-/atomic/target/
+/*/target/
 
 *.iml
 .idea
