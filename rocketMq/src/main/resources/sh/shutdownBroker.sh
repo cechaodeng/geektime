@@ -1,0 +1,1 @@
+sh ~/Soft/rocketmq-all-4.4.0/distribution/target/apache-rocketmq/bin/mqshutdown broker
