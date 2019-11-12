@@ -37,7 +37,6 @@ public class DiningPhilosophers {
                         return;
                     } else {
                         putLeftFork.run();
-                        leftFork = false;
                     }
                 }
             } catch (Exception e) {
