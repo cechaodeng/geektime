@@ -13,6 +13,7 @@
         <module>rocketMq</module>
         <module>Spring-boot-alibaba-rocketmq</module>
         <module>leetcode</module>
+        <module>netty</module>
     </modules>
 
 </project>
