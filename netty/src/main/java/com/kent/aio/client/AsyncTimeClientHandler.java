@@ -56,7 +56,7 @@ public class AsyncTimeClientHandler implements CompletionHandler<Void, AsyncTime
                     ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                     client.read(readBuffer, readBuffer, new CompletionHandler<Integer, ByteBuffer>() {
                         @Override
-                        public void completed(Integer result, ByteBuffer integer2) {
+                        public void completed(Integer result, ByteBuffer buffer) {
                             buffer.flip();
                             byte[] bytes = new byte[buffer.remaining()];
                             buffer.get(bytes);
@@ -64,6 +64,11 @@ public class AsyncTimeClientHandler implements CompletionHandler<Void, AsyncTime
 
                             try {
                                 body = new String(bytes, "UTF-8");
+                                /**
+                                 * todo have a bug in this
+                                 * can not receive msg
+                                 */
+
                                 System.out.println("Now is " + body);
                                 latch.countDown();
 

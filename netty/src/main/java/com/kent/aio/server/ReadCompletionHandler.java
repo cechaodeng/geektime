@@ -26,7 +26,7 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
         try {
             String req = new String(body, "UTF-8");
             System.out.println("The time server receive order : " + req);
-            String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(req) ? new Date(System.currentTimeMillis()).toString() : "BAD ORDER";
+            String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(req) ? "123" : "BAD ORDER";
             doWrite(currentTime);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
