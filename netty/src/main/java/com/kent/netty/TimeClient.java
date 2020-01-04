@@ -13,7 +13,6 @@ public class TimeClient {
 
     public void connect(int port, String host) throws Exception {
         //配置客户端NIO线程组
-
         EventLoopGroup group = new NioEventLoopGroup();
 
         try {
@@ -23,6 +22,9 @@ public class TimeClient {
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
+                            /**
+                             * 启动成功后初始化SocketChannel
+                             */
                             ch.pipeline().addLast(new TimeClientHandler());
                         }
                     });
