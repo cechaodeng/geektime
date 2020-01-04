@@ -39,7 +39,15 @@ public class TimeServer {
     private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
         @Override
         protected void initChannel(SocketChannel ch) throws Exception {
+            /**
+             * LineBasedFrameDecoder
+             * 以换行符为结束标志的解码器
+             * \n \r\n
+             */
             ch.pipeline().addLast(new LineBasedFrameDecoder(1024));
+            /**
+             * 将上面的handler接收到的对象转换成字符串，然后继续调用下面的handler
+             */
             ch.pipeline().addLast(new StringDecoder());
             ch.pipeline().addLast(new TimeServerHandler());
         }
