@@ -1,4 +1,4 @@
-package com.kent.netty.sticky.solution;
+package com.kent.netty.decoder.line;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
